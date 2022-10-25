@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import propTypes from 'prop-types';
 
 /*Opcion 1
 {setCategoria} => Se hace la desestructuración de la funcion setCategoria()
@@ -28,7 +29,7 @@ export const AddCategoria = ({onNewCategoria}) => {
 
 
     return (
-        <form onSubmit={event => onSubmit(event)}>
+        <form onSubmit={event => onSubmit(event)} aria-label='form'>
             <input
                 type="text"
                 placeholder="Buscar"
@@ -37,4 +38,9 @@ export const AddCategoria = ({onNewCategoria}) => {
             />
         </form>
     )
+}
+
+AddCategoria.propTypes ={
+    //func => Es una funcion
+    onNewCategoria  : propTypes.func.isRequired,
 }

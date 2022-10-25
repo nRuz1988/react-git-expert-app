@@ -1,6 +1,7 @@
 
 import {GifItem} from './GifItem';
 import {useFechGifs} from '../hooks/useFechGifs';
+import propTypes from 'prop-types';
 
 export const GifGrid = ({categoria}) => {
 
@@ -26,6 +27,7 @@ export const GifGrid = ({categoria}) => {
                     propiedades, cuando son muchas*/ 
                     imagenes.map(( img ) =>(
                         <GifItem 
+                            key={img.id}
                             {...img}
                         />
                     ))
@@ -33,5 +35,8 @@ export const GifGrid = ({categoria}) => {
             </div>
        </> 
     )
+}
 
+GifGrid.propTypes ={
+    categoria  : propTypes.string.isRequired,
 }

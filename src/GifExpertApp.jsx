@@ -9,7 +9,7 @@ export const GifExpertApp = () => {
 
     const onAddCategoria = (newCateria)=>{
 
-        //Si ya existe el valor en el arreglo, que no lo agrege
+        //Si ya existe el valor en el arreglo, que no lo agregue
         if(categorias.includes(newCateria)) return;
 
         setCategoria([newCateria,...categorias]);
